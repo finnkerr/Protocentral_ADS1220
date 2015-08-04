@@ -54,7 +54,18 @@
 #define PGA_GAIN_64 64
 #define PGA_GAIN_128 128
 
-
+#define MPX_AIN0_AIN1 0b00000000
+#define MPX_AIN0_AIN2 0b00010000
+#define MPX_AIN0_AIN3 0b00100000
+#define MPX_AIN1_AIN2 0b00110000
+#define MPX_AIN1_AIN3 0b01000000
+#define MPX_AIN2_AIN3 0b01010000
+#define MPX_AIN1_AIN0 0b01100000
+#define MPX_AIN3_AIN2 0b01110000
+#define MPX_AIN0_AVSS 0b10000000
+#define MPX_AIN1_AVSS 0b10010000
+#define MPX_AIN2_AVSS 0b10100000
+#define MPX_AIN3_AVSS 0b10110000
 
 //#define PGA_ON (Config_Reg0 & ~_BV(0))
 //#define PGA_OFF (Config_Reg0 | _BV(0))
@@ -91,4 +102,5 @@ class Protocentral_ADS1220
     void Single_shot_mode_ON(void);
     void set_data_rate(int datarate);
     void set_pga_gain(int pgagain);
+    void set_mpx_pins(int mpx_pins);
 };
